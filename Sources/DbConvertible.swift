@@ -4,7 +4,6 @@
 //
 
 import Foundation
-import Core
 
 public protocol DbConvertible {
     static func read(_ r: RowItem) -> Self

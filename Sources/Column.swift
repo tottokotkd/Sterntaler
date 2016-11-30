@@ -4,7 +4,6 @@
 //
 
 import Foundation
-import Core
 
 public struct Column<T: DbConvertible> {
     public let name: String
