@@ -30,8 +30,3 @@ public protocol RowItem {
     var asInt: Int? {get}
     var asDate: Date? {get}
 }
-
-public protocol Columns {
-    associatedtype T
-    static func read(r: Row) -> T
-}
