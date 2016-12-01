@@ -13,12 +13,12 @@ public protocol Driver {
 public protocol Pool {
     associatedtype C: Connection
     func execute(sql: String) -> [Row]
+    func connect() -> C
 }
 
 public protocol Connection {
     func execute(sql: String) -> [Row]
 }
-
 
 public protocol Row {
     subscript(i: Int) -> RowItem { get }
