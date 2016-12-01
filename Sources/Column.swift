@@ -6,6 +6,10 @@
 import Foundation
 
 public struct Column<T: DbConvertible> {
+    public init(name: String) {
+        self.name = name
+    }
+
     public let name: String
 
     func read(r: RowItem) -> T {
@@ -14,15 +18,26 @@ public struct Column<T: DbConvertible> {
 }
 
 public struct Columns {
-    
     public static func int(_ name: String) -> Column<Int> {
-        return Column<Int>(name: name)
+        return Column(name: name)
     }
     public static func string(_ name: String) -> Column<String>  {
-        return Column<String>(name: name)
+        return Column(name: name)
     }
     public static func date(_ name: String) -> Column<Date>  {
-        return Column<Date>(name: name)
+        return Column(name: name)
+    }
+}
+
+public struct NullableColumns {
+    public static func int(_ name: String) -> Column<Int?> {
+        return Column(name: name)
+    }
+    public static func string(_ name: String) -> Column<String?>  {
+        return Column(name: name)
+    }
+    public static func date(_ name: String) -> Column<Date?> {
+        return Column(name: name)
     }
 }
 
